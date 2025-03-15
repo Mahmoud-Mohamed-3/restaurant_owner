@@ -1,0 +1,114 @@
+@use 'variables' as *;
+
+.reservations-stats-container {
+  padding: 20px;
+  color: white;
+  background-color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  .page-title {
+    text-align: center;
+    color: $main_color;
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+    font-family: $main_font_family;
+    text-transform: uppercase;
+  }
+
+  .table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    flex-grow: 1; // Make sure this grows to take available space
+    width: 100%;
+  }
+
+  .reservations-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #333;
+    color: white;
+  }
+
+  .table-header {
+    background-color: #ffbe33;
+    padding: 12px;
+    text-align: center;
+    font-family: $consolas_font_family;
+  }
+
+  .table-cell {
+    padding: 12px;
+    text-align: center;
+    font-family: $second_font_family;
+  }
+
+  .table-cell:nth-child(even) {
+    background-color: #444;
+  }
+
+
+  .chart-container {
+    margin-top: 40px;
+    text-align: center;
+    width: 100%; // Ensure the chart takes full width
+    height: 400px; // Increase the height of the chart here
+  }
+
+  .chart-title {
+    color: $main_color;
+    font-size: 1.5rem;
+    margin-bottom: 20px; // Add some space between title and chart
+    font-family: $main_font_family;
+    text-transform: uppercase;
+
+  }
+
+  table, th, td {
+    border: 1px solid #555;
+    border-radius: 8px;
+  }
+
+  th, td {
+    padding: 12px;
+    text-align: center;
+  }
+
+  .pagination-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .pagination-button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: $second_color;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 12px;
+    font-family: $consolas_font_family;
+  }
+
+  .pagination-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  .pagination-info {
+    font-size: 1rem;
+    color: #ff6600;
+  }
+
+}
+
+
+
+
+
+

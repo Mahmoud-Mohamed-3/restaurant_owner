@@ -1,0 +1,136 @@
+@use "variables" as *;
+@use "sass:color"; // Import for color manipulation
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.SideBarContainer {
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #2c2c2c;
+  display: flex;
+  border-bottom-right-radius: 14px;
+  border-top-right-radius: 14px;
+  flex-direction: column;
+  padding: 20px 15px;
+
+  .Title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $second_color;
+    font-family: $main_font_family;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .Links {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+
+    .Link {
+      width: 100%;
+      text-align: center;
+      position: relative;
+
+      a {
+        display: block;
+        text-decoration: none;
+        color: #ddd;
+        padding: 12px;
+        font-size: 1.5rem;
+        font-weight: 500;
+        font-family: $consolas_font_family;
+        cursor: pointer;
+        border-radius: 10px;
+        position: relative;
+        transition: color 0.3s ease-in-out;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          width: 0;
+          height: 2px;
+          background: $second_color;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &::before {
+          bottom: 0;
+          transform: translateX(-50%);
+        }
+
+        &::after {
+          top: 0;
+          transform: translateX(-50%);
+        }
+
+        &:hover,
+        &.activeLink { // Apply same effect for active link
+          color: $second_color;
+
+          &::before,
+          &::after {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+
+  .Actions {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+
+    .LogoutBtn {
+      border: none;
+      border-radius: 14px;
+      padding: 10px 20px;
+      background-color: #d9534f;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      width: 160px;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300%;
+        height: 300%;
+        background: rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease-in-out;
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(0);
+      }
+
+      &:hover {
+        background-color: color.scale(#d9534f, $lightness: -10%);
+        transform: scale(1.05);
+        box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+
+        &::before {
+          transform: translate(-50%, -50%) scale(1);
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

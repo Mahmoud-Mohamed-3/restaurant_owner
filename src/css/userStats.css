@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+.user-stats-container {
+  padding: 20px;
+  background-color: rgb(48, 48, 48);
+  color: #ffbe33;
+  min-height: 100vh;
+}
+.user-stats-container h1 {
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+  margin-bottom: 20px;
+  font-size: 2.6rem;
+  text-transform: uppercase;
+}
+.user-stats-container .table-container {
+  margin-top: 40px;
+}
+.user-stats-container .table-container .user-stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #1c1c1c; /* Dark background for the table */
+}
+.user-stats-container .table-container .user-stats-table th,
+.user-stats-container .table-container .user-stats-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #444; /* Darker borders */
+}
+.user-stats-container .table-container .user-stats-table th {
+  background-color: #ff6600; /* Orange header */
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: center;
+}
+.user-stats-container .table-container .user-stats-table td {
+  background-color: #333; /* Dark background for rows */
+  color: #ffbe33; /* Light yellow text for rows */
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+}
+.user-stats-container .table-container .user-stats-table tr:hover {
+  background-color: #444; /* Hover effect with lighter background */
+}
+.user-stats-container .table-container .pagination-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 20px;
+}
+.user-stats-container .table-container .pagination-controls button {
+  padding: 10px 20px;
+  background-color: #ff6600;
+  border: none;
+  color: #242424;
+  cursor: pointer;
+  margin: 0 5px;
+  border-radius: 12px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.user-stats-container .table-container .pagination-controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.user-stats-container .table-container .pagination-controls span {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+}
+.user-stats-container .chart-container {
+  text-align: center;
+}
+.user-stats-container .chart-container h2 {
+  font-size: 2rem;
+  color: #ff6600;
+  margin-top: 40px;
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+  text-transform: uppercase;
+}
+.user-stats-container .chart-container canvas {
+  margin-top: 20px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 4px 8px rgba(255, 102, 0, 0.3);
+          box-shadow: 0 4px 8px rgba(255, 102, 0, 0.3);
+  height: 400px;
+  padding: 20px;
+}
